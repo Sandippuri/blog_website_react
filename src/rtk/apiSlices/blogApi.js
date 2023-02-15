@@ -4,7 +4,7 @@ export const blogApi = createApi({
   reducerPath: "blogApi",
   tagTypes: ["Blog"],
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:8000",
+    baseUrl: "https://blog-website-node-4nkd.vercel.app",
   }),
   endpoints: (builder) => ({
     getBlogs: builder.query({
