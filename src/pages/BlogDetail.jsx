@@ -8,7 +8,6 @@ import { useDeleteBlogMutation } from "../rtk/apiSlices/blogApi";
 const BlogDetail = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
-  console.log(path);
   const { data } = useGetBlogbyIdQuery(path);
   const [deletePost] = useDeleteBlogMutation();
   const [editModalRequestOpen, seteditModalRequestOpen] = useState(false);
