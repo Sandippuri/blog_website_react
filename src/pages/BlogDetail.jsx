@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import EditModal from "../components/modal/editModal";
 import DeleteModal from "../components/modal/deleteModal";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useGetBlogbyIdQuery } from "../rtk/apiSlices/blogApi";
 import { useDeleteBlogMutation } from "../rtk/apiSlices/blogApi";
 
 const BlogDetail = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const path = location.pathname.split("/")[1];
   const { data } = useGetBlogbyIdQuery(path);
   const [deletePost] = useDeleteBlogMutation();
@@ -58,7 +59,13 @@ const BlogDetail = () => {
       <DeleteModal
         isOpen={deleteModalRequestOpen}
         closeModal={() => setDeleteModalRequestOpen(false)}
-        onClick={() => deletePost(data?._id).then(window.location.replace("/"))}
+        onClick={() => {
+          deletePost(path)
+            .then((res) => {
+              setDeleteModalRequestOpen(false);
+            })
+            .then(() => navigate("/", { replace: true }));
+        }}
       />
     </>
   );
