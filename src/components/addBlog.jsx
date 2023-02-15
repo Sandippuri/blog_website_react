@@ -74,7 +74,7 @@ const AddBlog = ({ className }) => {
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="photo" className=" text-sm text-gray-500 font-medium">
-            Cover Image
+            Cover Image Link
           </label>
           <input
             className="input-field"
