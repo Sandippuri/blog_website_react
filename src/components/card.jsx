@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 const Card = ({ title, user, content, postedTime, id, image }) => {
   return (
     <div className="w-full h-fit flex border border-gray-200 rounded-md px-4 py-4 gap-4 sm:flex-col lg:flex-row">
-      <img
-        className="w-full lg:w-1/3 rounded-md sm:order-1 object-cover"
-        src={image}
-        alt="blog_photo"
-      />
+      <div className="w-full lg:w-64 rounded-md sm:order-1 object-fill h-64">
+        <img
+          className="w-full h-full rounded-md object-fill"
+          src={image}
+          alt="blog_photo"
+        />
+      </div>
       <div className="flex flex-col w-full gap-2 sm:order-1 ">
         <div className="flex items-center gap-2 sm:justify-start xl:justify-end ">
           <h3 className="text-gray-500 text-md font-medium">{user}</h3>
