@@ -6,7 +6,7 @@ const Card = ({ title, user, content, postedTime, id, image }) => {
     <div className="w-full h-fit flex border border-gray-200 rounded-md px-4 py-4 gap-4 sm:flex-col lg:flex-row">
       <div className="w-full lg:w-64 rounded-md sm:order-1 object-fill h-64">
         <img
-          className="w-full h-full rounded-md object-fill"
+          className="w-full h-full rounded-md object-cover"
           src={image}
           alt="blog_photo"
         />
