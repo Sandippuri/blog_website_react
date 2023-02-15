@@ -4,7 +4,7 @@ import Card from "./card";
 import { useGetBlogsQuery } from "../rtk/apiSlices/blogApi";
 
 const BlogContent = ({ className }) => {
-  const { data } = useGetBlogsQuery();
+  const { data, isLoading } = useGetBlogsQuery();
   const [search, setSearch] = useState("");
 
   const filteredData = data?.filter((blog) => {
