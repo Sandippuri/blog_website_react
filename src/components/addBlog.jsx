@@ -16,11 +16,7 @@ const AddBlog = ({ className }) => {
       content: content,
       photo: photo,
       user: user,
-    })
-      .unwrap()
-      .then((response) => {
-        console.log(response);
-      });
+    }).unwrap();
 
     setTitle("");
     setContent("");
