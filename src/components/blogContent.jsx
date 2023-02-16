@@ -34,7 +34,7 @@ const BlogContent = ({ className }) => {
             </p>
           </div>
         ) : (
-          filteredData?.map((blog) => {
+          filteredData?.reverse().map((blog) => {
             return (
               <Card
                 key={blog._id}
